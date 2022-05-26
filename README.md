@@ -1,43 +1,27 @@
-# Fyle-Statement
-This is the submission for the statement provided.
+# Angularapp
 
-## Table of Contents1
-1. [Software Requirements](#software-requirements)
-2. [Dependencies](#dependencies)
-3. [Running the Solution](#running-the-solution)
-	- [Initialising the Express server](#Initialising-the-express-server)
-	- [Initilaising the Angular Application](#Initialising-the-angular-application)
-4. [Additional Features](#bonus-features)
-	- [View User Profile](#view-user-profile)
-    - [Description](#description)
-    - [Prerequisites](#prerequisites)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
-## Software Requirements
-To run the application, the following  are required:
-- Angular - [Download Angular](https://angular.io/guide/setup-local)
-- Node.js - [Download Node.js](https://nodejs.org/en/)
+## Development server
 
-## Dependencies
-For setting up dependencies for frontend and backend (Angular, services,Express,Mongo DB, ...):
-- In the terminal, change directory to `angularapp` folder
-- Run `npm install`
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+## Code scaffolding
 
-### Starting the Express Server
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-**Note: In database, data was created manually according to the data from the statement provided**
+## Build
 
-- Open the terminal, and then change the directory to `angularapp`.
-- Run `nodemon server` to start the Express server.
-- open browser and enter http://localhost:4000
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Additional Features
+## Running unit tests
 
-### View User Profile
-When user click on user profile, a modal appears which dsiplays the user. profile picture in  full resolution
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-### Description
-Description of each repository is limited to 5 five words by default, can see complete description by clicking read more and can hide description by clicking read less
+## Running end-to-end tests
 
-### Prerequisites
-The prerequisites of each repository is limited to 2, can see complete can see complete prerequisites by clicking show more and can hide by clicking show less 
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
