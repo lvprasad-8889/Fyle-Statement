@@ -1,0 +1,31 @@
+.projectTitle {
+  font-weight: bold;
+  font-size: larger;
+  color: black;
+}
+
+.readmore,
+.readless {
+  color: #2199e8;
+  cursor: pointer;
+}
+
+#eachSkill {
+  background-color: #2199e8;
+  color: white;
+  border-radius: 5px;
+  padding: 0.35rem;
+  width: fit-content;
+  height: 30px;
+}
+
+.showmore,
+.showless {
+  cursor: pointer;
+  color: #2199e8;
+  border-radius: 5px;
+  border: 1px solid #2199e8;
+  padding: 0.25rem;
+  width: fit-content;
+  height: 30px;
+}

@@ -1,0 +1,16 @@
+<div class="completeProfile" *ngIf="fetchingInitialData">
+  <mat-spinner diameter="50"></mat-spinner>
+</div>
+
+<div class="container p-5" *ngIf="!fetchingInitialData">
+  <div class="card adjustMainCard">
+    <div class="container">
+      <app-userdetails [userData]="userData"></app-userdetails>
+      <app-search></app-search>
+      <app-userrepositories
+        [repositories]="repositories"
+        [totalRecords]="totalRecords"
+      ></app-userrepositories>
+    </div>
+  </div>
+</div>

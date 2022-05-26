@@ -1,0 +1,36 @@
+<div class="row profile" *ngIf="userData">
+  <div class="col-md-6 col-lg-4">
+    <div id="getRippleEffect" mat-ripple>
+      <img
+        class="adjustImage"
+        [src]="userData?.userImage"
+        (click)="openDialog()"
+        alt="rendering..."
+      />
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-6 text-md-start text-center">
+    <div class="username mt-3">{{ userData.userName }}</div>
+    <div class="description mt-3">{{ userData.description }}</div>
+    <div class="mt-3">
+      <app-icon graphics="location"></app-icon>
+      <span id="city">{{ userData.location }}</span>
+    </div>
+    <div class="socialAccount mt-3">
+      <app-icon
+        graphics="{{ userData.userSocialAccounts[0].companyName }}"
+      ></app-icon>
+      <span>{{ userData.userSocialAccounts[0].url }}</span>
+    </div>
+  </div>
+</div>
+<div
+  class="githubUrl"
+  (click)="copyToClipboard(userData.userGithubLink)"
+  matTooltip="copy"
+  matTooltipPosition="right"
+  *ngIf="userData"
+>
+  <app-icon graphics="copy"></app-icon>
+  <span class="decoration">{{ userData.userGithubLink }}</span>
+</div>

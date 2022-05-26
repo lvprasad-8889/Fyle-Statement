@@ -1,0 +1,49 @@
+<div class="card mb-2 mt-2 p-3">
+  <p class="projectTitle">{{ eachRepository.projectTitle }}</p>
+  <p class="projectDescription" *ngIf="descriptionLength <= 5">
+    {{ eachRepository.projectDescription }}
+  </p>
+  <p *ngIf="descriptionLength > 5">
+    {{ dummyDescription }}
+    <span
+      class="readmore"
+      *ngIf="!showLessText"
+      (click)="showCompleteDescription()"
+      >...read more</span
+    >
+    <span class="readless" *ngIf="showLessText" (click)="showLessDescription()"
+      >...read less</span
+    >
+  </p>
+
+  <div class="d-flex flex-wrap" *ngIf="preRequisitesLength <= 3">
+    <div
+      id="eachSkill"
+      class="m-1"
+      *ngFor="let skill of eachRepository.preRequisites"
+    >
+      {{ skill }}
+    </div>
+  </div>
+  <div class="d-flex flex-wrap" *ngIf="preRequisitesLength > 3">
+    <div id="eachSkill" class="m-1" *ngFor="let skill of lessRequisites">
+      {{ skill }}
+    </div>
+    <div
+      *ngIf="!showSkills"
+      class="showmore m-1"
+      mat-ripple
+      (click)="showCompleteSkills()"
+    >
+      show more
+    </div>
+    <div
+      *ngIf="showSkills"
+      class="showless m-1"
+      mat-ripple
+      (click)="showLessSkills()"
+    >
+      show less
+    </div>
+  </div>
+</div>

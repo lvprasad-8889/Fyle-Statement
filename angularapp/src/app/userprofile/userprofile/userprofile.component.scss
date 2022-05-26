@@ -1,0 +1,16 @@
+$smallScreens: 576px;
+
+.adjustMainCard {
+  padding: 3rem;
+  @media screen and (max-width: 576px) {
+    padding: 0.5rem;
+  }
+}
+
+.completeProfile{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

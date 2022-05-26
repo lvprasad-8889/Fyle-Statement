@@ -1,0 +1,44 @@
+.styleSearchButton {
+  background-color: #2199e8;
+  width: 100%;
+  height: 38px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  @media (max-width: 768px) {
+    height: 38px;
+    width: 117px;
+    float: right;
+  }
+}
+
+.loaderInSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+.styleRepoButton {
+  background-color: #2199e8;
+  height: 38px;
+  width: fit-content;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  float: right;
+}
+
+.goBack {
+  color: #2199e8;
+  text-decoration: underline;
+  cursor: pointer;
+}

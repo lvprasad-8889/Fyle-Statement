@@ -1,0 +1,64 @@
+<div class="mt-5">
+  <div class="row g-2">
+    <div class="col-md-10">
+      <input
+        type="text"
+        name="repositoryName"
+        class="form-control"
+        placeholder="Search repositories.."
+        [(ngModel)]="requiredRepository"
+      />
+      <small *ngIf="notEnteredData" class="text-danger"
+        >* repository name cannot be empty</small
+      >
+    </div>
+    <div class="col-md-2">
+      <div class="styleSearchButton" matRipple (click)="searchRepository()">
+        search
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- render the required data -->
+<div class="mt-3 loaderInSearch" *ngIf="fetchingRequiredRepository">
+  <mat-spinner diameter="50"></mat-spinner>
+</div>
+
+<div
+  class="mt-3 mb-5"
+  *ngIf="
+    !fetchingRequiredRepository && this.dataService.displayRequiredRepositories
+  "
+>
+  <div class="text-center mb-3" *ngIf="requiredRepositories.length === 0">
+    No repositories...
+    <span class="goBack" (click)="showRepositories()">Go Back</span>
+  </div>
+
+  <div
+    class="row"
+    *ngIf="
+      requiredRepositories.length <= this.dataService.getLimit() &&
+      requiredRepositories.length > 0
+    "
+  >
+    <div class="col-lg-6" *ngFor="let repository of requiredRepositories">
+      <app-repository
+        [eachRepository]="repository"
+        [numberOfSkills]="2"
+        [numberOfWords]="5"
+      ></app-repository>
+    </div>
+  </div>
+  <div *ngIf="requiredRepositories.length > this.dataService.getLimit()">
+    <app-userrepositories
+      [repositories]="requiredRepositories"
+      [totalRecords]="requiredRepositories.length"
+      [serverPagination]="false"
+    ></app-userrepositories>
+  </div>
+  <div class="styleRepoButton" matRipple (click)="showRepositories()">
+    Show repositories
+  </div>
+</div>

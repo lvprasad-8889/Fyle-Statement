@@ -1,0 +1,63 @@
+<!-- this pagination requests server -->
+<div class="mt-5 mb-4" *ngIf="!this.dataService.displayRequiredRepositories && serverPagination">
+  <div *ngIf="fetchingRepositories" class="loaderInPagination">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+
+  <div class="row" >
+    <div
+      class="col-lg-6"
+      *ngFor="
+        let repository of repositories
+          | paginate
+            : {
+                itemsPerPage: this.dataService.getLimit(),
+                currentPage: page,
+                totalItems: totalRecords
+              }
+      "
+    >
+      <app-repository
+        [eachRepository]="repository"
+        [numberOfSkills]="2"
+        [numberOfWords]="5"
+      ></app-repository>
+    </div>
+  </div>
+  <pagination-controls
+  (pageChange)="page = $event"
+  (click)="getPageNumber(page)"
+  class="text-center adjustControls mt-5"
+>
+</pagination-controls>
+</div>
+
+
+<!-- this pagination do not request server  -->
+<div class="mt-5 mb-4" *ngIf="this.dataService.displayRequiredRepositories && !serverPagination">
+  <div class="row">
+    <div
+      class="col-lg-6"
+      *ngFor="
+        let repository of repositories
+          | paginate
+            : {
+                itemsPerPage: this.dataService.getLimit(),
+                currentPage: page,
+                totalItems: totalRecords
+              }
+      "
+    >
+      <app-repository
+        [eachRepository]="repository"
+        [numberOfSkills]="2"
+        [numberOfWords]="5"
+      ></app-repository>
+    </div>
+  </div>
+  <pagination-controls
+  (pageChange)="page = $event"
+  class="text-center adjustControls mt-5"
+>
+</pagination-controls>
+</div>
