@@ -38,7 +38,6 @@ export class SearchComponent implements OnInit {
         .subscribe((res) => {
           this.fetchingRequiredRepository = false;
           this.requiredRepositories = res['message'];
-          console.log(this.requiredRepositories);
         });
     }
   }
